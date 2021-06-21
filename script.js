@@ -68,3 +68,23 @@ container.addEventListener('click', e => {
 
 // Initial count and total set
 updateSelectedCount();
+
+
+
+//configuring reset button
+function reset(){
+  document.querySelector('#btn').addEventListener('click',function(){
+    document.querySelectorAll('.row .selected').forEach(resetFunc);
+    count.innerText = 0
+    total.innerText = 0
+    function resetFunc(item){item.classList.remove('selected')}
+    clearLS();
+  });
+  }
+  //call it
+    reset()
+
+    //function to clear from local storage
+function clearLS(){
+  localStorage.removeItem("selectedSeats")
+  }
